@@ -50,6 +50,7 @@
 
         fetch('/', {
           method: 'POST',
+          headers: { 'Accept': '*/*' },
           // headers: { 'Content-Type': 'multipart/form-data' },
           body: new URLSearchParams(formData).toString()
         })
