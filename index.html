@@ -17,30 +17,15 @@
     <script>
       document.querySelector("#dogPictures").addEventListener("submit", handleSubmit);
 
-      //   const handleSubmit = (e) => {
-      //     e.preventDefault()
-      //     let myForm = document.getElementById('dogPictures');
-      //     let formData = new FormData(myForm)
-      //     fetch('/', {
-      //       method: 'POST',
-      //       headers: { "Content-Type": "multipart/form-data" },
-      //       body: new URLSearchParams(formData).toString()
-      //     }).then(() => console.log('Form successfully submitted')).catch((error) =>
-      //       alert(error))
-      //   }
       function handleSubmit(e) {
         e.preventDefault()
         const formData = new FormData();
         formData.append('name', 'Medor');
         formData.append('form-name', 'dogPictures');
         formData.append('picture', new Blob(['Hello world'], { type: "text/plain" }), 'test.txt');
-        // console.log(Array.from(formData.entries()))
-        // formData.get('picture').text().then(text => console.log(text))
-        // console.log(new URLSearchParams(formData).toString())
         fetch('/', {
           method: 'POST',
-          // headers: { 'Content-Type': 'multipart/form-data' },
-          body: formData  // FIXME URLSearchParams does not return the content of the file
+          body: formData
         })
           .then(() => console.log('Form successfully submitted'))
           .catch(error => alert(error));
