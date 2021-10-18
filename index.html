@@ -3,7 +3,7 @@
 
   </head>
   <body>  
-    plain html
+    <!--plain html
     <form id="dogPictures1" name="dogPictures1" method="POST" data-netlify="true">
       <p>
         <label>Dog’s Name: <input type="text" name="name" /></label>
@@ -14,7 +14,7 @@
       <p>
         <button type="submit">Send</button>
       </p>
-    </form>
+    </form>-->
     html + javascript
     <form id="dogPictures" name="dogPictures" method="POST" data-netlify="true">
       <p>
@@ -46,12 +46,11 @@
         const formData = new FormData();
         formData.append('name', 'Medor');
         formData.append('form-name', 'dogPictures');
-        formData.append('picture', new Blob(['<a id="a"><b id="b">hey!</b></a>'], { type: "text/xml" }), 'toto.html');
+        formData.append('picture', new Blob(['Hello world'], { type: "text/plain" }));
 
         fetch('/', {
           method: 'POST',
-          headers: { 'Accept': '*/*' },
-          // headers: { 'Content-Type': 'multipart/form-data' },
+          headers: { 'Content-Type': 'multipart/form-data' },
           body: new URLSearchParams(formData).toString()
         })
           .then(() => console.log('Form successfully submitted'))
