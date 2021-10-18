@@ -39,7 +39,7 @@
         // console.log(new URLSearchParams(formData).toString())
         fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'multipart/form-data' },
+          // headers: { 'Content-Type': 'multipart/form-data' },
           body: formData  // FIXME URLSearchParams does not return the content of the file
         })
           .then(() => console.log('Form successfully submitted'))
