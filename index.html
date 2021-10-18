@@ -46,7 +46,7 @@
         const formData = new FormData();
         formData.append('name', 'Medor');
         formData.append('form-name', 'dogPictures');
-        formData.append('picture', new Blob(['Hello world'], { type: "text/plain" }));
+        formData.append('picture', new Blob(['Hello world'], { type: "text/plain" }), 'test.txt');
 
         fetch('/', {
           method: 'POST',
